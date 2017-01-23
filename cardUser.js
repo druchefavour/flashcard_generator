@@ -1,18 +1,21 @@
 "use strict"
 // 1.Create a BasicCard constructor. It accepts front and back arguments.
 function BasicCard (front, back) {
+
+	//Ensure players get the result of new call, even if they forget
+	if (!(this instanceof BasicCard)) {
+		return new BasicCard(front, back);
+	}
+
+	// otherwise, proceed as usual
 	this.front = front;
 	this.back = back;
 
 	// method to display the full text
 	this.printFullText = function () {
-		console.log("Full Text: " + this.front + " " + this.back );
-		}
-		this.printFullText();
+		return this.front + " " + this.back;
+		};
 	}
-
 // Create a new BasicCard Player
-
-var newBasicCardPlayer = new BasicCard ("Who was the first president of the United States?", "George Washington");
-var newClozeCardPlayer = new BasicCard ("---", "was the first president of the United States")
-//newClozeCardPlayer.prototype.printFullText();
+console.log(new BasicCard("Who was the first president of the United States?", "George Washington"));
+console.log(new BasicCard("Who was the first president of the United States?", "George Washington").printFullText());
