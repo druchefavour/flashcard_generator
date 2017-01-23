@@ -17,5 +17,11 @@ function BasicCard (front, back) {
 		};
 	}
 // Create a new BasicCard Player
+console.log(new BasicCard("Who was the first president of the United States?", "George Washington") instanceof BasicCard);
 console.log(new BasicCard("Who was the first president of the United States?", "George Washington"));
 console.log(new BasicCard("Who was the first president of the United States?", "George Washington").printFullText());
+
+//==============================================================
+
+// dependency for inquirer npm package
+var inquirer = require("inquirer");
