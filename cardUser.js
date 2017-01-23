@@ -1,3 +1,4 @@
+"use strict"
 // 1.Create a BasicCard constructor. It accepts front and back arguments.
 function BasicCard (front, back) {
 	this.front = front;
@@ -13,3 +14,5 @@ function BasicCard (front, back) {
 // Create a new BasicCard Player
 
 var newBasicCardPlayer = new BasicCard ("Who was the first president of the United States?", "George Washington");
+var newClozeCardPlayer = new BasicCard ("---", "was the first president of the United States")
+//newClozeCardPlayer.prototype.printFullText();
