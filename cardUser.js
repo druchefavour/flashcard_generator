@@ -51,6 +51,19 @@ function ClozeCard (cloze_delete, cloze, partialText) {
 		return this.cloze_delete + " " + this.partialText
 	};
 
+	// runs inquirer and asks the user a series of questions whose replies are
+	// stored within the variable answers inside of the .then statement.
+	inquirer.prompt ([
+	{
+		name: "input",
+		message: "...was the first president of the United States"
+	}
+	]).then (function(answers){
+		//initializes the variable anotherClozeCard to be a card object which will take
+		//in all of the user's answers to the questions above
+		var anotherClozeCard = new ClozeCard(answers.name, answers.message);
+	});
+
 }
 
 // creates a ClozeCard using the "Clozecard" constructor
