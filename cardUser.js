@@ -25,3 +25,23 @@ console.log(new BasicCard("Who was the first president of the United States?", "
 
 // dependency for inquirer npm package
 var inquirer = require("inquirer");
+
+// constructor function used to create CloseCard objects
+
+function ClozeCard (cloze_delete, cloze, partialText) {
+	this.cloze_delete = cloze_delete;
+	this.cloze = cloze;
+	this.partialText = partialText;
+
+	//method that contains or returns only the cloze-deleted portion of the text.
+	this.printClozeDeleted = function () {
+		console.log(this.cloze_delete);
+		return this.cloze_delete;
+	};
+
+}
+
+// creates a ClozeCard using the "Clozecard" constructor
+var newClozeCard = new ClozeCard("George Washington", "---", "was the first president of the United States.");
+
+newClozeCard.printClozeDeleted();
