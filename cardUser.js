@@ -46,7 +46,7 @@ function ClozeCard (cloze_delete, cloze, partialText) {
 	};
 
 	// create a method that contains or returns the full text
-	this.printFullText = function () {
+	ClozeCard.prototype.printFullText = function () {
 		console.log(this.cloze_delete + " " + this.partialText);
 		return this.cloze_delete + " " + this.partialText
 	};
