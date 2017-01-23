@@ -39,9 +39,16 @@ function ClozeCard (cloze_delete, cloze, partialText) {
 		return this.cloze_delete;
 	};
 
+	// create method that contains or returns only the partial text
+	this.printPartialText = function () {
+		console.log(this.cloze + " " + this.partialText);
+		return this.partialText;
+	};
+
 }
 
 // creates a ClozeCard using the "Clozecard" constructor
 var newClozeCard = new ClozeCard("George Washington", "---", "was the first president of the United States.");
 
 newClozeCard.printClozeDeleted();
+newClozeCard.printPartialText();
