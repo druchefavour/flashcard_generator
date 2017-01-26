@@ -55,15 +55,18 @@ function ClozeCard (cloze_delete, cloze, partialText) {
 	// stored within the variable answers inside of the .then statement.
 	inquirer.prompt ([
 	{
-		name: "input",
+		name: "cloze_delete",
 		message: "...was the first president of the United States"
 	}
 	]).then (function(answers){
 		//initializes the variable anotherClozeCard to be a card object which will take
 		//in all of the user's answers to the questions above
-		var anotherClozeCard = new ClozeCard(answers.name, answers.message);
-	});
+		var anotherClozeCard = new ClozeCard(answers.cloze_delete, answers.cloze, answers.partialText);
 
+		// printInfo method is run to show that the newguy object was successfully created and filled
+
+		anotherClozeCard.printFullText();
+	});
 }
 
 // creates a ClozeCard using the "Clozecard" constructor
