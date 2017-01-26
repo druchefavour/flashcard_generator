@@ -1,4 +1,8 @@
-// Create Basic Flascard function accepting front and back arguments
+// Make the application scope safe
+
+'use strict'
+
+// Create Basic Flashcard function accepting front and back arguments
 
 var BasicFlashCard = function (frontText, backText) {
 	//Write constructors such that users can call them with or without the new keyword
