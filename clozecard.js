@@ -1,4 +1,4 @@
-// make application scope safe
+// Make application scope safe
 
 'use strict'
 // Create Cloze Flashcard function accepting cloze, partial text and cloze delete (answer)
@@ -27,4 +27,15 @@ var ClozeFlashCard = function (cloze, partialText, cloze_delete) {
 		return this.cloze_delete + ' ' + this.partialText;
 	}
 };
-var newClozeFlashCard = new ClozeFlashCard ("---", "was the first president of the United States", "George Washington");
+
+// ===================================================================================
+//var newClozeFlashCard = new ClozeFlashCard ("---", "was the first president of the United States", "George Washington");
+//var anotherClozeFlashCard = ClozeFlashCard ("---", "was the first president of the United States", "George Washington");
+
+// -----------------------------------------------------------------------------------
+// Display to show that instanceof works
+//console.log(newClozeFlashCard.displayFullText());
+//console.log(anotherClozeFlashCard.displayFullText());
+//====================================================================================
+
+module.exports = ClozeFlashCard;

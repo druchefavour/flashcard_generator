@@ -22,8 +22,13 @@ var BasicFlashCard = function (frontText, backText) {
 
 // Create BasicCard constructor
 
-var newBasicFlashCard = new BasicFlashCard("Who was the first president of the United States?", "George Washington");
-var anotherBasicFlashCard = BasicFlashCard("Who was the first president of the United States?", "George Washington");
+//=======================================================================================
+// var newBasicFlashCard = new BasicFlashCard("Who was the first president of the United States?", "George Washington");
+// var anotherBasicFlashCard = BasicFlashCard("Who was the first president of the United States?", "George Washington");
+//-------------------------------------------------------------------------------------
+// Display to show that instanceof works
+//console.log(newBasicFlashCard.backText);
+//console.log(anotherBasicFlashCard.backText);
+//=======================================================================================
 
-console.log(newBasicFlashCard.backText);
-console.log(anotherBasicFlashCard.backText);
+module.exports = BasicFlashCard;
