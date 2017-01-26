@@ -2,6 +2,11 @@
 
 var ClozeFlashCard = function (cloze, partialText, cloze_delete) {
 
+	//Enable the constructor to work whether 'new' is used or not
+	if(!(this instanceof ClozeFlashCard)) {
+		return new ClozeFlashCard (cloze, partialText, cloze_delete);
+	}  
+	
 	// Create properties to return the cloze part of the text, the partial text and the cloze_delete part of the card
 
 	this.cloze = cloze;
@@ -19,3 +24,4 @@ var ClozeFlashCard = function (cloze, partialText, cloze_delete) {
 		return this.cloze_delete + ' ' + this.partialText;
 	}
 };
+var newClozeFlashCard = new ClozeFlashCard ("---", "was the first president of the United States", "George Washington");
