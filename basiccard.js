@@ -11,3 +11,7 @@ var BasicFlashCard = function (frontText, backText) {
 		return this.backText;
 	}
 };
+
+// Create BasicCard constructor
+
+var newBasicFlashCard = new BasicFlashCard("Who was the first president of the United States?", "George Washington");
