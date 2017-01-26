@@ -1,3 +1,6 @@
+// make application scope safe
+
+'use strict'
 // Create Cloze Flashcard function accepting cloze, partial text and cloze delete (answer)
 
 var ClozeFlashCard = function (cloze, partialText, cloze_delete) {
@@ -6,7 +9,7 @@ var ClozeFlashCard = function (cloze, partialText, cloze_delete) {
 	if(!(this instanceof ClozeFlashCard)) {
 		return new ClozeFlashCard (cloze, partialText, cloze_delete);
 	}  
-	
+
 	// Create properties to return the cloze part of the text, the partial text and the cloze_delete part of the card
 
 	this.cloze = cloze;
