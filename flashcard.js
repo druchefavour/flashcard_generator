@@ -3,6 +3,10 @@
 var BasicCard = require("./basiccard.js");
 var ClozeCard = require("./clozecard.js");
 
+// Using inquirer keyword to pass Flashcards
+var inquirer = require('inquirer');
+console.log ('Hi Welcome to Node FlashCard');
+
 // Create Basic Flashcard constructor
 var newBasicCard = new BasicCard("Who was the first President of the United States", "George Washington")
 var newClozeCard = new ClozeCard ("---", "was the first president of the United States", "George Washington");
@@ -11,25 +15,53 @@ var newClozeCard = new ClozeCard ("---", "was the first president of the United 
 var passFlashCard = function () {
 	inquirer.prompt({
 		name: "action",
-		type: "display",
+		type: "list",
 		message: "What would you do?",
 		choices: ["Pass a Basic flash Card", "Pass a Cloze flash Card"]
 	}).then(function(answer){
 		switch (answer.action) {
-			case "Pass a Basic flash Card":
-			passBasicCard();
-			break; 
-
-			case "Pass a Cloze flash card":
+			case "Pass a Cloze flash Card":
 			passClozeCard();
+			break;
+			case "Pass a Basic flash Card":
+			passBasicCard ();
 			break;
 		}
 	});
 };
 
-//This will print everything in exports
-console.log("--------------------------");
-console.log("THE FLASH CARDS");
-console.log(newBasicCard.getBackText());
-console.log(newClozeCard.displayFullText());
-console.log("--------------------------");
+var passBasicCard = function () {
+	inquirer.prompt({
+		type: "input",
+		name: "name",
+		message: "Who was the first president of the United States?"
+	}).then(function(answer){
+		passFlashCard();
+		console.log('\n Correct Answer: ');
+		console.log(JSON.stringify(newBasicCard.getBackText(), null, ' '));
+	});
+};
+
+var passClozeCard = function (questions) {
+	inquirer.prompt({
+		type: "input",
+		name: "name",
+		message: "--- was the first president of the United States"
+	}).then(function(answers, error) {
+		var x = answers.name;
+		console.log(x);
+		var y = newClozeCard.getClozeDelete();
+		console.log(y);
+
+		if (x === y) {
+			console.log ('\n Correct Answer: ');
+			console.log(JSON.stringify(newClozeCard.displayFullText(), null, ' '));
+		} else {
+			throw error;
+			console.log(err);
+		}
+	});
+};
+
+passFlashCard();
+  
