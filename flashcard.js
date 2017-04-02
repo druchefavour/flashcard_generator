@@ -49,9 +49,9 @@ var passClozeCard = function (questions) {
 		message: "--- was the first president of the United States"
 	}).then(function(answers, error) {
 		var x = answers.name;
-		console.log(x);
+		// console.log(x);
 		var y = newClozeCard.getClozeDelete();
-		console.log(y);
+		// console.log(y);
 
 		if (x === y) {
 			console.log ('\n Correct Answer: ');
@@ -64,4 +64,3 @@ var passClozeCard = function (questions) {
 };
 
 passFlashCard();
-  
